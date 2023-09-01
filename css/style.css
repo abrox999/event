@@ -331,7 +331,7 @@ html {
 
 #section-4 .image-container {
     background-color: #ececec;
-    background-image: url("/Assets/backgrounds/About/logo.jpg");
+    background-image: url("../Assets/backgrounds/About/logo.jpg");
     width: 100vw;
     background-size: cover;
     background-position: center;
@@ -428,7 +428,7 @@ html {
 
 #section-8 .image-container {
     background-color: #ececec;
-    background-image: url("/Assets/backgrounds/Service/service_bg.png");
+    background-image: url("../Assets/backgrounds/Service/service_bg.png");
     width: 100vw;
     background-size: cover;
     background-position: top;
@@ -438,7 +438,7 @@ html {
 @media (max-width:500px) {
     #section-8 .image-container {
         background-color: #ececec;
-        background-image: url("/Assets/backgrounds/Service/service_bg.png");
+        background-image: url("../Assets/backgrounds/Service/service_bg.png");
         width: 100vw;
         background-size: cover;
         background-position: left;
@@ -796,7 +796,7 @@ html {
 
 #section-12 .image-container {
     background-color: #ececec;
-    background-image: url("/Assets/backgrounds/Gallery/g_bg.jpg");
+    background-image: url("../Assets/backgrounds/Gallery/g_bg.jpg");
     width: 100vw;
     background-size: cover;
     background-position: center;
@@ -806,7 +806,7 @@ html {
 @media (max-width:500px) {
     #section-12 .image-container {
         background-color: #ececec;
-        background-image: url("/Assets/backgrounds/Gallery/g_bg.jpg");
+        background-image: url("../Assets/backgrounds/Gallery/g_bg.jpg");
         width: 100vw;
         background-size: cover;
         background-position: left;
@@ -824,7 +824,7 @@ html {
 
 #section-13 .image-container {
     background-color: #ececec;
-    background-image: url("/Assets/backgrounds/Contact/con_bg.jpg");
+    background-image: url("../Assets/backgrounds/Contact/con_bg.jpg");
     width: 100vw;
     background-size: cover;
     /* background-position: 0 -290px; */

@@ -35,12 +35,10 @@ function send() {
     })
     .then(
       (response) => {
-        alert("Your message has been sent! Thank you");
+        document.getElementById("popupopen").style.display = "flex";
       },
       (error) => {
-        alert(
-          "Sorry, we couldn't process your request at this time. Please try again later"
-        );
+        document.getElementById("popupfail").style.display = "flex";
       }
     );
 }

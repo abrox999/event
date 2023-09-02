@@ -29,7 +29,7 @@
     <input type="checkbox" id="nav-check" />
     <div class="nav-header">
       <div class="nav-title">
-        <img src="Assets/company_logo/logo.jpg" alt="company-logo" />
+        <img src="Assets/company_logo/BlackLogo.png" alt="company-logo" />
       </div>
     </div>
     <div class="nav-btn">
@@ -71,14 +71,23 @@
   </section>
   <!-- end of section 12 -->
 
+
   <!-- section 10 -->
   <section id="section-10">
     <div class="container">
       <div class="gallery-tabs">
         <p>Galleries and Reviews</p>
-        <div class="d-flex gap-3">
-          <button id="buttonActive" class="tab-button active" onclick="showGallery('weddings')">Weddings</button>
-          <button id="buttonActive1" class="tab-button" onclick="showGallery('events')">Events</button>
+        <div class="gallery-all">
+          <div class="gallery-2tab">
+            <button id="buttonActive" class="tab-button active" onclick="showGallery('weddings');updatePlaceholder('Weddings');">Weddings</button>
+            <button id="buttonActive1" class="tab-button" onclick="showGallery('events');updatePlaceholder('Events');">Events</button>
+          </div>
+
+          <div class="search-container">
+            <input type="text" id="searchInput" oninput="searchGallery()">
+
+          </div>
+
         </div>
 
       </div>
@@ -182,7 +191,7 @@
         </div>
 
         <div class="footer-mid col-md-12">
-          <!-- <img src="Assets/company_logo/logo.jpg" alt="logo" /> -->
+          <!-- <img src="Assets/company_logo/BlackLogo.png" alt="logo" /> -->
           <div class="footer-mid-icon">
             <a href="http://www.facebook.com/eventzntrendz"><iconify-icon icon="ic:baseline-facebook"></iconify-icon>
             </a>
@@ -202,14 +211,79 @@
     </div>
   </footer>
   <!-- end of footer -->
+  <script>
+    // function searchGallery() {
+    //   const searchInput = document.getElementById("searchInput").value.toLowerCase();
+    //   const weddingGalleries = document.querySelectorAll("#weddingsGallery .each_item");
+    //   const eventGalleries = document.querySelectorAll("#eventsGallery .each_item");
 
+    //   // Loop through wedding galleries and check if the title contains the search input
+    //   weddingGalleries.forEach(function(gallery) {
+    //     const title = gallery.querySelector(".overlay").textContent.toLowerCase();
+    //     if (title.includes(searchInput) || searchInput === "") {
+    //       gallery.style.display = "block";
+    //     } else {
+    //       gallery.style.display = "none";
+    //     }
+    //   });
+
+    //   // Loop through event galleries and check if the title contains the search input
+    //   eventGalleries.forEach(function(gallery) {
+    //     const title = gallery.querySelector(".overlay").textContent.toLowerCase();
+    //     if (title.includes(searchInput) || searchInput === "") {
+    //       gallery.style.display = "block";
+    //     } else {
+    //       gallery.style.display = "none";
+    //     }
+    //   });
+    // }
+    function updatePlaceholder(tabName) {
+      const searchInput = document.getElementById("searchInput");
+      if (tabName === "Weddings") {
+        searchInput.placeholder = "Search all weddings";
+      } else if (tabName === "Events") {
+        searchInput.placeholder = "Search all events";
+      }
+    }
+
+    function searchGallery() {
+      const searchInput = document.getElementById("searchInput").value.toLowerCase();
+      const weddingGalleries = document.querySelectorAll("#weddingsGallery .each_item");
+      const eventGalleries = document.querySelectorAll("#eventsGallery .each_item");
+
+      // Loop through wedding galleries and check if the title contains the search input
+      weddingGalleries.forEach(function(gallery) {
+        const title = gallery.querySelector(".overlay").textContent.toLowerCase();
+        if (title.includes(searchInput) || searchInput === "") {
+          gallery.style.display = "block";
+        } else {
+          gallery.style.display = "none";
+        }
+      });
+
+      // Loop through event galleries and check if the title contains the search input
+      eventGalleries.forEach(function(gallery) {
+        const title = gallery.querySelector(".overlay").textContent.toLowerCase();
+        if (title.includes(searchInput) || searchInput === "") {
+          gallery.style.display = "block";
+        } else {
+          gallery.style.display = "none";
+        }
+      });
+    }
+
+
+    updatePlaceholder("Weddings");
+  </script>
   <script>
     function showGallery(type) {
       const weddingsGallery = document.getElementById("weddingsGallery");
       const eventsGallery = document.getElementById("eventsGallery");
       const buttonActive = document.getElementById("buttonActive");
       const buttonActive1 = document.getElementById("buttonActive1");
+      const searchInput = document.getElementById("searchInput");
 
+      searchInput.value = "";
       if (type === "weddings") {
         weddingsGallery.style.display = "flex";
         eventsGallery.style.display = "none";
@@ -222,6 +296,7 @@
         buttonActive.classList.remove("active");
 
       }
+      searchGallery();
     }
   </script>
 
